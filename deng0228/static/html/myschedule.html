@@ -1,0 +1,200 @@
+<!DOCTYPE	html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>My Schedule</title>
+	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	  <link rel="stylesheet" type="text/css" href="/css/myschedule.css">
+	  <script src="js/myschedule.js"></script>
+	  <script type="module" src="js/map.js"></script>
+   </head>
+
+   <body>
+
+	<nav>
+	<table>
+		<thead>
+		   	<tr>
+		   		<th><a href="http://localhost:4131/myschedule.html">MySchedule</a></th>
+				<th><a href="http://localhost:4131/myform.html">FormInput</a></th>
+				<th><a href="http://localhost:4131/aboutme.html">AboutMe</a></th>
+				<th><a href="http://localhost:4131/stock.html">MyStock</a></th>
+		   	</tr>
+		</thead>
+	</table>
+	</nav>
+	
+	 <h2>My Schedule</h2>
+
+	<div id="content-container">
+	 <table class="table2">
+		<thead>
+		   	<tr>
+				<th>Days</th>
+				<th>Event</th>	
+				<th>Time</th>
+				<th>Location</th>	
+				<th>Phone Number</th>
+				<th>Url</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr onmouseover="showimg(1)">
+				<th>Monday</th>
+				<th>CSCI4131 Lecture</th>
+				<th>11:15 - 12:30</th>
+				<th>257 S 19th Ave, Minneapolis, MN 55455
+					<img src="img/Anderson.jpg" alt="Anderson Hall"></th>
+				<th>No Phone Number</th>
+				<th><a href="https://canvas.umn.edu/courses/482763">CSCI4131 Info</a></th>
+			</tr>
+
+			<tr onmouseover="showimg(2)">
+				<th>Monday</th>
+				<th>CSCI4061 Lab</th>
+				<th>15:35 - 16:25</th>
+				<th>Kenneth H. Keller Hall, 200 Union St SE, Minneapolis, MN 55455
+					<img src="img/keller.jpg" alt="Keller Hall"></th>
+				<th>No Phone Number</th>
+				<th><a href="https://docs.google.com/presentation/d/1zSlLdzLqwnfzQtxqeMtc60JRfDX60PiylUwzVriztiM/edit#slide=id.g10f306f19b8_1_61">CSCI4061 Lab Info</a></th>
+			</tr>
+
+			<tr onmouseover="showimg(3)">
+				<th>Tuesday</th>
+				<th>BA2051 Lecture</th>
+				<th>14:30 - 15:20</th>
+				<th>321 S 19th Ave, Minneapolis, MN 55455
+					<img src="img/carlson.jpg" alt="Carlson School"></th>
+				<th>No Phone Number</th>
+				<th><a href="https://canvas.umn.edu/courses/486602">BA2051 Info</a></th>
+			</tr>
+
+			<tr onmouseover="showimg(4)">
+				<th>Tuesday</th>
+				<th>CSCI4061 Lecture</th>
+				<th>16:00 - 17:15</th>
+				<th>421 Washington Ave SE, Minneapolis, MN 55455
+					<img src="img/amundson.jpg" alt="Amundson Hall"></th>
+				<th>No Phone Number</th>
+				<th><a href="https://canvas.umn.edu/courses/482790">CSCI4061 Info</a></th>
+			</tr>
+
+			<tr onmouseover="showimg(1)">
+				<th>Wednesday</th>
+				<th>CSCI4131 Lecture</th>
+				<th>11:15 - 12:30</th>
+				<th>257 S 19th Ave, Minneapolis, MN 55455
+					<img src="img/Anderson.jpg" alt="Anderson Hall"></th>
+				<th>No Phone Number</th>
+				<th><a href="https://canvas.umn.edu/courses/482763">CSCI4131 Info</a></th>
+			</tr>
+
+			<tr onmouseover="showimg(5)">
+				<th>Wednesday</th>
+				<th>Basketball Tournament</th>
+				<th>12:00 - 17:00</th>
+				<th>9700 France Ave S, Bloomington, MN 55431
+					<img src="img/Normandale.jpg" alt="Normandale Community College"></th>
+				<th>952-358-8201</th>
+				<th><a href="https://www.normandale.edu/current-students/get-involved/student-life.html">Tournament Info</a></th>
+			</tr>
+
+			<tr onmouseover="showimg(3)">
+				<th>Thursday</th>
+				<th>BA2051 Lecture</th>
+				<th>14:30 - 15:20</th>
+				<th>321 S 19th Ave, Minneapolis, MN 55455
+					<img src="img/carlson.jpg" alt="Carlson School"></th>
+				<th>No Phone Number</th>
+				<th><a href="https://canvas.umn.edu/courses/486602">BA2051 Info</a></th>
+			</tr>
+
+			<tr onmouseover="showimg(4)">
+				<th>Thursday</th>
+				<th>CSCI4061 Lecture</th>
+				<th>16:00 - 17:15</th>
+				<th>421 Washington Ave SE, Minneapolis, MN 55455
+					<img src="img/amundson.jpg" alt="Amundson Hall"></th>
+				<th>No Phone Number</th>
+				<th><a href="https://canvas.umn.edu/courses/482790">CSCI4061 Info</a></th>
+			</tr>
+		</tbody>
+		</table>
+
+		<div id="slideshow-container">
+			<img id="holder" src="img/gophers-mascot.png" alt="Goldy">
+			<br>
+			<button id="startSlideshow">Start Slideshow</button>
+			<button id="stopSlideshow">Stop Slideshow</button>
+		</div>
+	</div>
+		
+
+		<script>
+			((g) => {
+			  var h,
+				a,
+				k,
+				p = "The Google Maps JavaScript API",
+				c = "google",
+				l = "importLibrary",
+				q = "__ib__",
+				m = document,
+				b = window;
+			  b = b[c] || (b[c] = {});
+			  var d = b.maps || (b.maps = {}),
+				r = new Set(),
+				e = new URLSearchParams(),
+				u = () =>
+				  h ||
+				  (h = new Promise(async (f, n) => {
+					await (a = m.createElement("script"));
+					e.set("libraries", [...r] + "");
+					for (k in g)
+					  e.set(
+						k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
+						g[k],
+					  );
+					e.set("callback", c + ".maps." + q);
+					a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+					d[q] = f;
+					a.onerror = () => (h = n(Error(p + " could not load.")));
+					a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+					m.head.append(a);
+				  }));
+			  d[l]
+				? console.warn(p + " only loads once. Ignoring:", g)
+				: (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+			})({
+			  key: "AIzaSyB27kJBd9LeUyTTdATB2JnVfDP_OvI-kdY",
+			  v: "weekly",
+			});
+		</script>
+	
+	<div id="map-container">
+
+		<div id="directions-panel">
+			<h3>Directions</h3>
+			<p>Enter a destination and select a travel mode to get directions.</p>
+		</div>
+	
+		<div id="maps"></div>
+	
+		<div id="direction-box">
+			<label for="destination">Direction to:</label>
+			<input type="text" id="destination" placeholder="Enter destination">
+			<br>
+			<input type="radio" id="driving" name="travelMode" value="DRIVING" checked>
+			<label for="driving">DRIVE</label>
+			<input type="radio" id="walking" name="travelMode" value="WALKING">
+			<label for="walking">WALK</label>
+			<input type="radio" id="transit" name="travelMode" value="TRANSIT">
+			<label for="transit">TRANSIT</label>
+			<br>
+			<button id="goButton">Go</button>
+		</div>
+	</div>
+	  
+
+    </body>
