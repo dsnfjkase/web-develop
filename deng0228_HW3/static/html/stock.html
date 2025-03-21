@@ -1,0 +1,39 @@
+<!DOCTYPE	html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>My Stock</title>
+	  <link rel="stylesheet" type="text/css" href="/css/stock.css">
+	  <script src="js/stock.js"></script>
+   </head>
+
+   <body>
+
+	<nav>
+	<table>
+		<thead>
+		   	<tr>
+		   		<th><a href="http://localhost:4131/myschedule.html">MySchedule</a></th>
+				<th><a href="http://localhost:4131/myform.html">FormInput</a></th>
+				<th><a href="http://localhost:4131/aboutme.html">AboutMe</a></th>
+				<th><a href="http://localhost:4131/stock.html">MyStock</a></th>
+		   	</tr>
+		</thead>
+	</table>
+	</nav>
+	
+	 <h2>My Stock</h2>
+	 <div id="stock">
+		<p>
+			<label for="stockname">Enter Stock Symbol:</label>
+			<input type="text" id="stockname" name="stockname" placeholder="e.g., AAPL, MSFT" required>
+			<button id="submit" type="button" onclick="">Get Stock Data</button>
+		</p>
+		<p>
+			<label for="quote">API Response:</label>
+			<textarea id="quote" name="quote" rows="20" cols="50" readonly></textarea>
+		</p>
+	</div>
+   </body>
+</html>
+
